@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CinemaManagerApi.Controllers
 {
-  public class UsersController : CommonController<User>
+  public class UsersController : GenericController<User>
   {
     private readonly IRepository<User> repository;
 

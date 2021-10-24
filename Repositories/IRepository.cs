@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace CinemaManagerApi.Repositories
 {
-  public interface IRepository<T>
+  public interface IRepository<IIdentifiable>
   {
-    void AddItem(T item);
+    void AddItem(IIdentifiable item);
     void DeleteItem(int id);
-    IEnumerable<T> GetAllItems();
-    T GetSingleItem(int id);
-    void UpdateItem(T item);
+    IEnumerable<IIdentifiable> GetAllItems();
+    IIdentifiable GetSingleItem(int id);
+    void UpdateItem(IIdentifiable item);
   }
 }
