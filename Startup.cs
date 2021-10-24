@@ -1,17 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using CinemaManagerApi.Models;
 using CinemaManagerApi.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
 namespace cinema_manager_api
@@ -31,6 +24,8 @@ namespace cinema_manager_api
       services.AddSingleton<IRepository<User>, UsersRepository>();
       services.AddSingleton<IRepository<Movie>, MoviesRepository>();
       services.AddSingleton<IRepository<Hall>, HallsRepository>();
+      services.AddSingleton<IRepository<Reservation>, ReservationsRepository>();
+      services.AddSingleton<IRepository<Seanse>, SeansesRepository>();
       services.AddControllers();
       services.AddSwaggerGen(c =>
       {
