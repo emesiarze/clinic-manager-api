@@ -7,11 +7,11 @@ namespace CinemaManagerApi.Controllers
 {
   [ApiController]
   [Route("[controller]")]
-  public class CommonController<T> : ControllerBase
+  public class GenericController<T> : ControllerBase
   {
     private readonly IRepository<T> repository;
 
-    public CommonController(IRepository<T> repository)
+    public GenericController(IRepository<T> repository)
     {
       this.repository = repository;
     }
