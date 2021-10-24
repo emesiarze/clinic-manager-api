@@ -7,11 +7,6 @@ namespace CinemaManagerApi.Controllers
 {
   public class UsersController : GenericController<User>
   {
-    private readonly IRepository<User> repository;
-
-    public UsersController(IRepository<User> repository) : base(repository)
-    {
-      this.repository = repository;
-    }
+    public UsersController(IRepository<User> repository) : base(repository) { }
   }
 }

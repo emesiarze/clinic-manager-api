@@ -29,6 +29,8 @@ namespace cinema_manager_api
     public void ConfigureServices(IServiceCollection services)
     {
       services.AddSingleton<IRepository<User>, UsersRepository>();
+      services.AddSingleton<IRepository<Movie>, MoviesRepository>();
+      services.AddSingleton<IRepository<Hall>, HallsRepository>();
       services.AddControllers();
       services.AddSwaggerGen(c =>
       {

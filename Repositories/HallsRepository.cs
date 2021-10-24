@@ -3,7 +3,7 @@ using CinemaManagerApi.Models;
 
 namespace CinemaManagerApi.Repositories
 {
-  public class HallRepository : GenericRepository<Hall>
+  public class HallsRepository : GenericRepository<Hall>
   {
     public override List<Hall> items
     {
