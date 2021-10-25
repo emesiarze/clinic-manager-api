@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using CinemaManagerApi.Models;
 
@@ -13,7 +14,7 @@ namespace CinemaManagerApi.Repositories
       return items;
     }
 
-    public T GetSingleItem(int id)
+    public T GetSingleItem(Guid id)
     {
       return items.Find(item => item.id == id);
     }
@@ -29,7 +30,7 @@ namespace CinemaManagerApi.Repositories
       itemToUpdate.Update(item);
     }
 
-    public void DeleteItem(int id)
+    public void DeleteItem(Guid id)
     {
       T selectedItem = items.Find(item => item.id.Equals(id));
       int index = items.IndexOf(selectedItem);

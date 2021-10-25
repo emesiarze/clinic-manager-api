@@ -1,8 +1,10 @@
+using System;
+
 namespace CinemaManagerApi.Models
 {
   public interface IDatabaseItem<T>
   {
-    int id { get; set; }
+    Guid id { get; init; }
 
     void Update(T item);
   }

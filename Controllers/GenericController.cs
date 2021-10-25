@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using CinemaManagerApi.Models;
 using CinemaManagerApi.Repositories;
@@ -24,7 +25,7 @@ namespace CinemaManagerApi.Controllers
     }
 
     [HttpGet("{id}")]
-    public T GetItem(int id)
+    public T GetItem(Guid id)
     {
       var item = repository.GetSingleItem(id);
       return item;
@@ -45,7 +46,7 @@ namespace CinemaManagerApi.Controllers
     }
 
     [HttpDelete("{id}")]
-    public string DeleteItem(int id)
+    public string DeleteItem(Guid id)
     {
       this.repository.DeleteItem(id);
       return "success";

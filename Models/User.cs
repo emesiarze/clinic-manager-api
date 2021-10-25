@@ -1,17 +1,20 @@
+using System;
+
 namespace CinemaManagerApi.Models
 {
   public class User : IDatabaseItem<User>
   {
-    public User(int id, string fullName, string login, string password, bool isWorker)
+
+    public User(string fullName, string login, string password, bool isWorker)
     {
-      this.id = id;
+      this.id = Guid.NewGuid();
       this.fullName = fullName;
       this.login = login;
       this.password = password;
       this.isWorker = isWorker;
     }
 
-    public int id { get; set; }
+    public Guid id { get; init; }
     public string fullName { get; set; }
     public string login { get; set; }
     public string password { get; set; }

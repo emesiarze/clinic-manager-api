@@ -10,9 +10,9 @@ namespace CinemaManagerApi.Repositories
       get
       {
         return new List<User>() {
-          new User(1, "Jan Kowalski", "jankow", "qwer", false),
-          new User(2, "Tomasz Malinowski", "tommal", "qwer", false),
-          new User(3, "Jerzy Gwóźdź", "jegwoz", "qwer", true)
+          new User("Jan Kowalski", "jankow", "qwer", false),
+          new User("Tomasz Malinowski", "tommal", "qwer", false),
+          new User("Jerzy Gwóźdź", "jegwoz", "qwer", true)
           // { id: 4, fullName: "Nick Adams", login: "nicada", password: "qwer", isWorker: false }    
         };
       }

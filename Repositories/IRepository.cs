@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections.Generic;
 
 namespace CinemaManagerApi.Repositories
@@ -6,9 +7,9 @@ namespace CinemaManagerApi.Repositories
   public interface IRepository<IIdentifiable>
   {
     void AddItem(IIdentifiable item);
-    void DeleteItem(int id);
+    void DeleteItem(Guid id);
     IEnumerable<IIdentifiable> GetAllItems();
-    IIdentifiable GetSingleItem(int id);
+    IIdentifiable GetSingleItem(Guid id);
     void UpdateItem(IIdentifiable item);
   }
 }
