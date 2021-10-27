@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using CinemaManagerApi.Data;
 using CinemaManagerApi.Models;
 
 namespace CinemaManagerApi.Repositories
@@ -9,13 +10,13 @@ namespace CinemaManagerApi.Repositories
     {
       get
       {
-        return new List<User>() {
-          new User("Jan Kowalski", "jankow", "qwer", false),
-          new User("Tomasz Malinowski", "tommal", "qwer", false),
-          new User("Jerzy Gwóźdź", "jegwoz", "qwer", true)
-          // { id: 4, fullName: "Nick Adams", login: "nicada", password: "qwer", isWorker: false }    
-        };
+        return UsersData.users;
       }
+    }
+
+    User login(string login, string password)
+    {
+      return items.Find(user => user.login == login && user.password == password);
     }
   }
 }

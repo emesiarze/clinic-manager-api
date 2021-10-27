@@ -26,6 +26,7 @@ namespace cinema_manager_api
       services.AddSingleton<IRepository<Hall>, HallsRepository>();
       services.AddSingleton<IRepository<Reservation>, ReservationsRepository>();
       services.AddSingleton<IRepository<Seanse>, SeansesRepository>();
+      services.AddSingleton<ILoginRepository<User>, AuthRepository>();
       services.AddControllers();
       services.AddSwaggerGen(c =>
       {
