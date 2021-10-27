@@ -5,7 +5,7 @@ namespace CinemaManagerApi.Data
 {
   public static class UsersData
   {
-    public static List<User> users = new List<User>() {
+    public static List<User> items = new List<User>() {
     new User("Jan Kowalski", "jankow", "qwer", false),
     new User("Tomasz Malinowski", "tommal", "qwer", false),
     new User("Jerzy Gwóźdź", "jegwoz", "qwer", true)

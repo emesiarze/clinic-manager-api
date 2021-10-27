@@ -6,8 +6,7 @@ namespace CinemaManagerApi.Repositories
 {
   public class AuthRepository : ILoginRepository<User>
   {
-
-    List<User> users = UsersData.users;
+    List<User> users = UsersData.items;
 
     public User login(string login, string password)
     {

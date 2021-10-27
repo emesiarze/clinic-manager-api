@@ -10,13 +10,8 @@ namespace CinemaManagerApi.Repositories
     {
       get
       {
-        return UsersData.users;
+        return UsersData.items;
       }
-    }
-
-    User login(string login, string password)
-    {
-      return items.Find(user => user.login == login && user.password == password);
     }
   }
 }

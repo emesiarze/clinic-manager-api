@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using CinemaManagerApi.Data;
 using CinemaManagerApi.Models;
 
 namespace CinemaManagerApi.Repositories
@@ -10,17 +11,7 @@ namespace CinemaManagerApi.Repositories
     {
       get
       {
-        return new List<Reservation>() {
-          new Reservation(1, 1, 1, DateTime.Now, false),
-          new Reservation(1, 1, 2, DateTime.Now, false),
-          new Reservation(2, 2, 2, DateTime.Now, false),
-          new Reservation(2, 2, 3, DateTime.Now, false),
-          new Reservation(3, 3, 4, DateTime.Now, false),
-          new Reservation(3, 4, 5, DateTime.Now, false),
-          new Reservation(3, 4, 6, DateTime.Now, false),
-          
-          // { id: 8, userId: 3, seanseId: 4, seatNumber: 8, startTime: new DateTime(), isPermanent: false },
-        };
+        return ReservationsData.items;
       }
     }
   }
