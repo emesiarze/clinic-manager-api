@@ -17,14 +17,14 @@ namespace CinemaManagerApi.Controllers
       this.repository = repository;
     }
 
-    [HttpGet]
+    [HttpGet("all")]
     public IEnumerable<T> GetAllItems()
     {
       var items = repository.GetAllItems();
       return items;
     }
 
-    [HttpGet("{id}")]
+    [HttpGet]
     public T GetItem(Guid id)
     {
       var item = repository.GetSingleItem(id);
@@ -38,14 +38,14 @@ namespace CinemaManagerApi.Controllers
       return "success";
     }
 
-    [HttpPut("{id}")]
+    [HttpPut]
     public string UpdateItem(int id, T item)
     {
       this.repository.UpdateItem(item);
       return "success";
     }
 
-    [HttpDelete("{id}")]
+    [HttpDelete]
     public string DeleteItem(Guid id)
     {
       this.repository.DeleteItem(id);

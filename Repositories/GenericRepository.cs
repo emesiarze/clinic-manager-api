@@ -16,7 +16,7 @@ namespace CinemaManagerApi.Repositories
 
     public T GetSingleItem(Guid id)
     {
-      return items.Find(item => item.id == id);
+      return items.Find(item => item.id.Equals(id));
     }
 
     public void AddItem(T item)
