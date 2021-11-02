@@ -23,8 +23,6 @@ namespace CinemaManagerApi.Models
     public void Update(User item)
     {
       this.fullName = item.fullName;
-      this.login = item.login;
-      this.password = item.password;
       this.isWorker = item.isWorker;
     }
   }

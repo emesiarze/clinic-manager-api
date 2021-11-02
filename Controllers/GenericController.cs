@@ -18,38 +18,55 @@ namespace CinemaManagerApi.Controllers
     }
 
     [HttpGet("all")]
-    public IEnumerable<T> GetAllItems()
+    public Response<IEnumerable<T>> GetAllItems()
     {
-      var items = repository.GetAllItems();
-      return items;
+      IEnumerable<T> items = repository.GetAllItems();
+      Response<IEnumerable<T>> response = new Response<IEnumerable<T>>();
+      response.data = items;
+      response.isSuccess = items is not null;
+
+      return response;
     }
 
     [HttpGet]
-    public T GetItem(Guid id)
+    public Response<T> GetItem(Guid id)
     {
-      var item = repository.GetSingleItem(id);
-      return item;
+      T item = repository.GetSingleItem(id);
+      Response<T> response = new Response<T>();
+      response.data = item;
+      response.isSuccess = item is not null;
+
+      return response;
     }
 
     [HttpPost]
-    public string AddItem(T item)
+    public Response<string> AddItem(T item)
     {
-      this.repository.AddItem(item);
-      return "success";
+      string result = this.repository.AddItem(item);
+      Response<string> response = new Response<string>();
+      response.isSuccess = result == "success";
+
+      return response;
     }
 
     [HttpPut]
-    public string UpdateItem(int id, T item)
+    public Response<string> UpdateItem(T item)
     {
-      this.repository.UpdateItem(item);
-      return "success";
+      string result = this.repository.UpdateItem(item);
+      Response<string> response = new Response<string>();
+      response.isSuccess = result == "success";
+
+      return response;
     }
 
     [HttpDelete]
-    public string DeleteItem(Guid id)
+    public Response<string> DeleteItem(Guid id)
     {
-      this.repository.DeleteItem(id);
-      return "success";
+      string result = this.repository.DeleteItem(id);
+      Response<string> response = new Response<string>();
+      response.isSuccess = result == "success";
+
+      return response;
     }
   }
 }

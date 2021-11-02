@@ -19,22 +19,46 @@ namespace CinemaManagerApi.Repositories
       return items.Find(item => item.id.Equals(id));
     }
 
-    public void AddItem(T item)
+    public string AddItem(T item)
     {
-      items.Add(item);
+      try
+      {
+        items.Add(item);
+        return "success";
+      }
+      catch
+      {
+        return "error";
+      }
     }
 
-    public void UpdateItem(T item)
+    public string UpdateItem(T item)
     {
-      T itemToUpdate = items.Find(itm => itm.id.Equals(item.id));
-      itemToUpdate.Update(item);
+      try
+      {
+        T itemToUpdate = items.Find(itm => itm.id.Equals(item.id));
+        itemToUpdate.Update(item);
+        return "success";
+      }
+      catch
+      {
+        return "error";
+      }
     }
 
-    public void DeleteItem(Guid id)
+    public string DeleteItem(Guid id)
     {
-      T selectedItem = items.Find(item => item.id.Equals(id));
-      int index = items.IndexOf(selectedItem);
-      items.RemoveAt(index);
+      try
+      {
+        T selectedItem = items.Find(item => item.id.Equals(id));
+        int index = items.IndexOf(selectedItem);
+        items.RemoveAt(index);
+        return "success";
+      }
+      catch
+      {
+        return "not_found";
+      }
     }
   }
 }

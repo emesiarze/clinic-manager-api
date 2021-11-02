@@ -6,10 +6,10 @@ namespace CinemaManagerApi.Repositories
 {
   public interface IRepository<IIdentifiable>
   {
-    void AddItem(IIdentifiable item);
-    void DeleteItem(Guid id);
+    string AddItem(IIdentifiable item);
+    string DeleteItem(Guid id);
     IEnumerable<IIdentifiable> GetAllItems();
     IIdentifiable GetSingleItem(Guid id);
-    void UpdateItem(IIdentifiable item);
+    string UpdateItem(IIdentifiable item);
   }
 }
