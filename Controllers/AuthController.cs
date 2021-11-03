@@ -31,5 +31,17 @@ namespace CinemaManagerApi.Controllers
 
       return response;
     }
+
+    [HttpGet("login-check")]
+    public Response<string> DoesLoginExists(string login)
+    {
+      string result = this.repository.DoesLoginExists(login);
+      Response<string> response = new Response<string>();
+
+      response.isSuccess = result != "error";
+      response.data = result != "error" ? result : null;
+
+      return response;
+    }
   }
 }

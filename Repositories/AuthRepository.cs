@@ -12,5 +12,19 @@ namespace CinemaManagerApi.Repositories
     {
       return users.Find(user => user.login.Equals(login) && user.password.Equals(password));
     }
+
+    public string DoesLoginExists(string login)
+    {
+      try
+      {
+        User user = this.users.Find(u => u.login.Equals(login));
+        string result = (user is null) ? "not_exists" : "exists";
+        return result;
+      }
+      catch
+      {
+        return "error";
+      }
+    }
   }
 }
