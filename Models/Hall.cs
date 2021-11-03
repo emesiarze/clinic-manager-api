@@ -4,18 +4,18 @@ namespace CinemaManagerApi.Models
 {
   public class Hall : IDatabaseItem<Hall>
   {
-    public Hall(int number)
+    public Guid id { get; init; }
+    public string name { get; set; }
+
+    public Hall(string name)
     {
       this.id = Guid.NewGuid();
-      this.number = number;
+      this.name = name;
     }
-
-    public Guid id { get; init; }
-    public int number { get; set; }
 
     public void Update(Hall item)
     {
-      this.number = number;
+      this.name = item.name;
     }
   }
 }
