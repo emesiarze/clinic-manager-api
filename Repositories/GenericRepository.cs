@@ -9,12 +9,12 @@ namespace CinemaManagerApi.Repositories
   {
     abstract public List<T> items { get; }
 
-    public IEnumerable<T> GetAllItems()
+    public virtual IEnumerable<T> GetAllItems()
     {
       return items;
     }
 
-    public T GetSingleItem(Guid id)
+    public virtual T GetSingleItem(Guid id)
     {
       return items.Find(item => item.id.Equals(id));
     }
