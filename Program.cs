@@ -30,10 +30,17 @@ namespace cinema_manager_api
       List<Hall> halls = HallsData.items;
       List<Movie> movies = MoviesData.items;
 
+      Random rand = new Random();
+      // DateTime date = new DateTime();
+
       int minIndex = Math.Min(halls.Count<Hall>(), movies.Count<Movie>());
       for (int i = 0; i < minIndex; i++)
       {
-        SeanseData.items.Add(new Seanse(movies[i].id, halls[i].id, new DateTime()));
+        DateTime date = DateTime.Now;
+        date.AddDays(rand.Next(0, 5));
+        date.AddHours(rand.Next(0, 5));
+        date.AddMinutes(rand.Next(0, 59));
+        SeanseData.items.Add(new Seanse(movies[i].id, halls[i].id, date));
       }
     }
 
