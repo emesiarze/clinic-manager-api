@@ -20,9 +20,9 @@ namespace CinemaManagerApi.Repositories
       this.items.ForEach(item =>
       {
         User user = UsersData.items.Find(h => h.id.Equals(item.userId));
-        Seanse seanse = SeanseData.items.Find(m => m.id.Equals(item.seanseId));
+        Seanse seanse = SeansesData.items.Find(m => m.id.Equals(item.seanseId));
 
-        item.user = user;
+        item.user = new User(user);
         item.seanse = seanse;
       });
 
@@ -34,9 +34,9 @@ namespace CinemaManagerApi.Repositories
       Reservation item = base.GetSingleItem(id);
 
       User user = UsersData.items.Find(h => h.id.Equals(item.userId));
-      Seanse seanse = SeanseData.items.Find(m => m.id.Equals(item.seanseId));
+      Seanse seanse = SeansesData.items.Find(m => m.id.Equals(item.seanseId));
 
-      item.user = user;
+      item.user = new User(user);
       item.seanse = seanse;
 
       return item;

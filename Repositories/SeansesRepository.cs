@@ -11,7 +11,7 @@ namespace CinemaManagerApi.Repositories
     {
       get
       {
-        return SeanseData.items;
+        return SeansesData.items;
       }
     }
 

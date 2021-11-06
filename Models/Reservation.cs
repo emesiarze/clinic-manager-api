@@ -4,7 +4,7 @@ namespace CinemaManagerApi.Models
 {
   public class Reservation : IDatabaseItem<Reservation>
   {
-    public Reservation(int userId, int seanseId, int seatNumber, DateTime startTime, bool isPermanent)
+    public Reservation(Guid userId, Guid seanseId, int seatNumber, DateTime startTime, bool isPermanent)
     {
       this.id = Guid.NewGuid();
       this.userId = userId;
@@ -15,8 +15,8 @@ namespace CinemaManagerApi.Models
     }
 
     public Guid id { get; init; }
-    public int userId { get; set; }
-    public int seanseId { get; set; }
+    public Guid userId { get; set; }
+    public Guid seanseId { get; set; }
     public User user { get; set; }
     public Seanse seanse { get; set; }
     public int seatNumber { get; set; }

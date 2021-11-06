@@ -13,6 +13,13 @@ namespace CinemaManagerApi.Models
       this.password = password;
       this.isWorker = isWorker;
     }
+    public User(User user)
+    {
+      this.id = user.id;
+      this.fullName = user.fullName;
+      this.login = user.login;
+      this.isWorker = user.isWorker;
+    }
 
     public Guid id { get; init; }
     public string fullName { get; set; }

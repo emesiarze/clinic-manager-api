@@ -22,6 +22,7 @@ namespace cinema_manager_api
     public static void InitializeDatasets()
     {
       InitializeSeanses();
+      InitializeReservations();
     }
 
     private static void InitializeSeanses()
@@ -40,7 +41,21 @@ namespace cinema_manager_api
         date.AddDays(rand.Next(0, 5));
         date.AddHours(rand.Next(0, 5));
         date.AddMinutes(rand.Next(0, 59));
-        SeanseData.items.Add(new Seanse(movies[i].id, halls[i].id, date));
+        SeansesData.items.Add(new Seanse(movies[i].id, halls[i].id, date));
+      }
+    }
+
+    private static void InitializeReservations()
+    {
+      System.Diagnostics.Debug.WriteLine("Creating reservations");
+      List<Seanse> seanses = SeansesData.items;
+      List<User> users = UsersData.items;
+
+      int minIndex = Math.Min(seanses.Count<Seanse>(), users.Count<User>());
+      for (int i = 0; i < minIndex; i++)
+      {
+        ReservationsData.items.Add(new Reservation(users[i].id, seanses[i].id, i, DateTime.Now, false));
+        ReservationsData.items.Add(new Reservation(users[i].id, seanses[i].id, i + 1, DateTime.Now, false));
       }
     }
 
