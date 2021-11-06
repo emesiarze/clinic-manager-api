@@ -19,7 +19,7 @@ namespace CinemaManagerApi.Repositories
       return items.Find(item => item.id.Equals(id));
     }
 
-    public string AddItem(T item)
+    public virtual string AddItem(T item)
     {
       try
       {
@@ -32,18 +32,11 @@ namespace CinemaManagerApi.Repositories
       }
     }
 
-    public string UpdateItem(T item)
+    public virtual string UpdateItem(T item)
     {
-      try
-      {
-        T itemToUpdate = items.Find(itm => itm.id.Equals(item.id));
-        itemToUpdate.Update(item);
-        return "success";
-      }
-      catch
-      {
-        return "error";
-      }
+      T itemToUpdate = items.Find(itm => itm.id.Equals(item.id));
+      itemToUpdate.Update(item);
+      return "success";
     }
 
     public string DeleteItem(Guid id)

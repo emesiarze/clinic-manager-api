@@ -46,6 +46,11 @@ namespace CinemaManagerApi.Controllers
       Response<string> response = new Response<string>();
       response.isSuccess = result == "success";
 
+      if (!response.isSuccess)
+      {
+        response.errorMessage = result;
+      }
+
       return response;
     }
 

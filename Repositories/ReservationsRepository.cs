@@ -15,6 +15,38 @@ namespace CinemaManagerApi.Repositories
       }
     }
 
+    public override string AddItem(Reservation item)
+    {
+      try
+      {
+        Reservation potentiallyIdenticalItem = this.items.Find(reservation =>
+        {
+          TimeSpan reservationStartTime = DateTime.Now - reservation.startTime;
+          TimeSpan minuteAgo = TimeSpan.FromMinutes(1);
+
+          return reservation.seanseId.Equals(item.seanseId)
+          && reservation.seatNumber.Equals(item.seatNumber)
+          && !reservation.isPermanent && reservationStartTime < minuteAgo;
+        }
+
+        );
+        if (potentiallyIdenticalItem is null)
+        {
+          Reservation newItem = new Reservation(item);
+          items.Add(newItem);
+          return "success";
+        }
+        else
+        {
+          return "reservation_exists";
+        }
+      }
+      catch
+      {
+        return "error";
+      }
+    }
+
     public override IEnumerable<Reservation> GetAllItems()
     {
       this.items.ForEach(item =>

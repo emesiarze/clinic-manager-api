@@ -4,14 +4,29 @@ namespace CinemaManagerApi.Models
 {
   public class Reservation : IDatabaseItem<Reservation>
   {
+    public Reservation()
+    {
+      this.id = Guid.NewGuid();
+    }
+
     public Reservation(Guid userId, Guid seanseId, int seatNumber, DateTime startTime, bool isPermanent)
     {
       this.id = Guid.NewGuid();
       this.userId = userId;
       this.seanseId = seanseId;
       this.seatNumber = seatNumber;
-      this.startTime = startTime;
+      this.startTime = DateTime.Now;
       this.isPermanent = isPermanent;
+    }
+
+    public Reservation(Reservation reservation)
+    {
+      this.id = Guid.NewGuid();
+      this.userId = reservation.userId;
+      this.seanseId = reservation.seanseId;
+      this.seatNumber = reservation.seatNumber;
+      this.startTime = DateTime.Now;
+      this.isPermanent = reservation.isPermanent;
     }
 
     public Guid id { get; init; }
