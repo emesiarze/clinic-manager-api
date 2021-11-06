@@ -17,8 +17,6 @@ namespace CinemaManagerApi.Models
     public Guid id { get; init; }
     public Guid userId { get; set; }
     public Guid seanseId { get; set; }
-    public User user { get; set; }
-    public Seanse seanse { get; set; }
     public int seatNumber { get; set; }
     public DateTime startTime { get; set; }
     public bool isPermanent { get; set; }

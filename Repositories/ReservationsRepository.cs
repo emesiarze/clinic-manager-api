@@ -21,9 +21,6 @@ namespace CinemaManagerApi.Repositories
       {
         User user = UsersData.items.Find(h => h.id.Equals(item.userId));
         Seanse seanse = SeansesData.items.Find(m => m.id.Equals(item.seanseId));
-
-        item.user = new User(user);
-        item.seanse = seanse;
       });
 
       return items;
@@ -35,9 +32,6 @@ namespace CinemaManagerApi.Repositories
 
       User user = UsersData.items.Find(h => h.id.Equals(item.userId));
       Seanse seanse = SeansesData.items.Find(m => m.id.Equals(item.seanseId));
-
-      item.user = new User(user);
-      item.seanse = seanse;
 
       return item;
     }
