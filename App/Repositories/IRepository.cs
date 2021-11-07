@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace CinemaManagerApi.Repositories
+namespace cinema_manager_api.Repositories
 {
   public interface IRepository<IIdentifiable>
   {

@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using CinemaManagerApi.Models;
+using cinema_manager_api.Models;
 
-namespace CinemaManagerApi.Data
+namespace cinema_manager_api.Data
 {
   public static class ReservationsData
   {

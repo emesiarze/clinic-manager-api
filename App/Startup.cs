@@ -1,5 +1,5 @@
-using CinemaManagerApi.Models;
-using CinemaManagerApi.Repositories;
+using cinema_manager_api.Models;
+using cinema_manager_api.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;

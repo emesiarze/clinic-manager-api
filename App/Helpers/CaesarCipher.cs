@@ -1,6 +1,6 @@
 using System;
 
-namespace CinemaManagerApi.Helpers
+namespace cinema_manager_api.Helpers
 {
   public class CaesarCipher
   {

@@ -1,4 +1,4 @@
-namespace CinemaManagerApi.Models
+namespace cinema_manager_api.Models
 {
   public class Response<T>
   {

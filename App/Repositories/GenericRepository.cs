@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using CinemaManagerApi.Models;
+using cinema_manager_api.Models;
 
-namespace CinemaManagerApi.Repositories
+namespace cinema_manager_api.Repositories
 {
 
   public abstract class GenericRepository<T> : IRepository<T> where T : IDatabaseItem<T>

@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
-using CinemaManagerApi.Models;
-using CinemaManagerApi.Repositories;
+using cinema_manager_api.Models;
+using cinema_manager_api.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CinemaManagerApi.Controllers
+namespace cinema_manager_api.Controllers
 {
   public class ReservationsController : GenericController<Reservation>
   {

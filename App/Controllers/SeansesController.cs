@@ -1,7 +1,7 @@
-using CinemaManagerApi.Models;
-using CinemaManagerApi.Repositories;
+using cinema_manager_api.Models;
+using cinema_manager_api.Repositories;
 
-namespace CinemaManagerApi.Controllers
+namespace cinema_manager_api.Controllers
 {
   public class SeansesController : GenericController<Seanse>
   {
