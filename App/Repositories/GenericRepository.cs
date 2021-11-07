@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using cinema_manager_api.Models;
 
@@ -16,7 +17,11 @@ namespace cinema_manager_api.Repositories
 
     public virtual T GetSingleItem(Guid id)
     {
-      return items.Find(item => item.id.Equals(id));
+      var singleItemQuery = from qItem in items
+                            where qItem.id == id
+                            select qItem;
+
+      return singleItemQuery.FirstOrDefault<T>();
     }
 
     public virtual string AddItem(T item)
@@ -34,15 +39,30 @@ namespace cinema_manager_api.Repositories
 
     public virtual string UpdateItem(T item)
     {
-      T itemToUpdate = items.Find(itm => itm.id.Equals(item.id));
-      itemToUpdate.Update(item);
-      return "success";
+      try
+      {
+        var itemToUpdateQuery = from qItem in items
+                                where qItem.id == item.id
+                                select qItem;
+
+        T itemToUpdate = itemToUpdateQuery.FirstOrDefault<T>();
+        itemToUpdate.Update(item);
+        return "success";
+      }
+      catch
+      {
+        return "error";
+      }
     }
 
     public string DeleteItem(Guid id)
     {
       try
       {
+        var itemToDeleteQuery = from qItem in items
+                                where qItem.id == id
+                                select qItem;
+
         T selectedItem = items.Find(item => item.id.Equals(id));
         int index = items.IndexOf(selectedItem);
         items.RemoveAt(index);
@@ -50,7 +70,7 @@ namespace cinema_manager_api.Repositories
       }
       catch
       {
-        return "not_found";
+        return "error";
       }
     }
   }

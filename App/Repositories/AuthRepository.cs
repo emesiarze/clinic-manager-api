@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using cinema_manager_api.Data;
 using cinema_manager_api.Helpers;
 using cinema_manager_api.Models;
+using System.Linq;
 
 namespace cinema_manager_api.Repositories
 {
@@ -11,20 +12,21 @@ namespace cinema_manager_api.Repositories
 
     public User login(string login, string password)
     {
-      string encryptedPassword = CaesarCipher.Encrypt(password);
-      User user = users.Find(user =>
-      {
-        System.Diagnostics.Debug.WriteLine(user.login + " " + user.password + " " + encryptedPassword + " " + encryptedPassword.Length);
-        return user.login.Equals(login) && user.password.Equals(encryptedPassword);
-      });
 
-      if (user is null)
+      string encryptedPassword = CaesarCipher.Encrypt(password);
+
+      var query = from qUser in users
+                  where qUser.login == login && qUser.password == encryptedPassword
+                  select qUser;
+
+      if (query.Any<User>())
       {
-        return null;
+        User user = query.ElementAt<User>(0);
+        return new User(user);
       }
       else
       {
-        return new User(user);
+        return null;
       }
     }
 
@@ -32,8 +34,11 @@ namespace cinema_manager_api.Repositories
     {
       try
       {
-        User user = this.users.Find(u => u.login.Equals(login));
-        string result = (user is null) ? "not_exists" : "exists";
+        var usersQuery = from qUser in users
+                         where qUser.login == login
+                         select qUser;
+
+        string result = usersQuery.Any<User>() ? "exists" : "not_exists";
         return result;
       }
       catch

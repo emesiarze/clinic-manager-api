@@ -21,9 +21,7 @@ namespace cinema_manager_api.Controllers
     public Response<IEnumerable<T>> GetAllItems()
     {
       IEnumerable<T> items = repository.GetAllItems();
-      Response<IEnumerable<T>> response = new Response<IEnumerable<T>>();
-      response.data = items;
-      response.isSuccess = items is not null;
+      Response<IEnumerable<T>> response = this.createResponse<IEnumerable<T>>(items);
 
       return response;
     }
@@ -32,9 +30,7 @@ namespace cinema_manager_api.Controllers
     public Response<T> GetItem(Guid id)
     {
       T item = repository.GetSingleItem(id);
-      Response<T> response = new Response<T>();
-      response.data = item;
-      response.isSuccess = item is not null;
+      Response<T> response = this.createResponse<T>(item);
 
       return response;
     }
@@ -43,13 +39,7 @@ namespace cinema_manager_api.Controllers
     public Response<string> AddItem(T item)
     {
       string result = this.repository.AddItem(item);
-      Response<string> response = new Response<string>();
-      response.isSuccess = result == "success";
-
-      if (!response.isSuccess)
-      {
-        response.errorMessage = result;
-      }
+      Response<string> response = this.createResponse(result);
 
       return response;
     }
@@ -58,8 +48,7 @@ namespace cinema_manager_api.Controllers
     public Response<string> UpdateItem(T item)
     {
       string result = this.repository.UpdateItem(item);
-      Response<string> response = new Response<string>();
-      response.isSuccess = result == "success";
+      Response<string> response = this.createResponse(result);
 
       return response;
     }
@@ -68,8 +57,25 @@ namespace cinema_manager_api.Controllers
     public Response<string> DeleteItem(Guid id)
     {
       string result = this.repository.DeleteItem(id);
+      Response<string> response = this.createResponse(result);
+
+      return response;
+    }
+
+    private Response<string> createResponse(string result)
+    {
       Response<string> response = new Response<string>();
       response.isSuccess = result == "success";
+      response.errorMessage = !response.isSuccess ? result : null;
+
+      return response;
+    }
+
+    private Response<R> createResponse<R>(R item)
+    {
+      Response<R> response = new Response<R>();
+      response.data = item;
+      response.isSuccess = item is not null;
 
       return response;
     }
