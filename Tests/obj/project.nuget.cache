@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1KIP355YDkqfiKTYbYR6YC+WOm8DL77CvCdqkD1xTQn8662slKxFWxJla8vICKqOksb95Q3MYpuR+bZpk35aYw==",
+  "dgSpecHash": "uTw+cLzDnRgEaC+/ZVjJ+24/Gl84lR2goedkOXwkI4X2jYXLcjhl+9yBaRt5R5GMgVp8zbgreG9E6wTvRQ2ucg==",
   "success": true,
   "projectFilePath": "D:\\Projekty\\cinema-manager-api\\Tests\\Tests.csproj",
   "expectedPackageFiles": [
@@ -8,7 +8,6 @@
     "C:\\Users\\Hubert\\.nuget\\packages\\microsoft.codecoverage\\16.9.4\\microsoft.codecoverage.16.9.4.nupkg.sha512",
     "C:\\Users\\Hubert\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\Hubert\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
-    "C:\\Users\\Hubert\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Hubert\\.nuget\\packages\\microsoft.net.test.sdk\\16.9.4\\microsoft.net.test.sdk.16.9.4.nupkg.sha512",
     "C:\\Users\\Hubert\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Hubert\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",

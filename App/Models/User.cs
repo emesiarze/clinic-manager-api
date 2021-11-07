@@ -1,9 +1,12 @@
 using System;
+using cinema_manager_api.Helpers;
 
 namespace cinema_manager_api.Models
 {
   public class User : IDatabaseItem<User>
   {
+    private string _password;
+
     public User() { }
 
     public User(string fullName, string login, string password, bool isWorker)
@@ -26,7 +29,14 @@ namespace cinema_manager_api.Models
     public Guid id { get; init; }
     public string fullName { get; set; }
     public string login { get; set; }
-    public string password { get; set; }
+    public string password
+    {
+      get => _password;
+      set
+      {
+        _password = CaesarCipher.Encrypt(value);
+      }
+    }
     public bool isWorker { get; set; }
 
     public void Update(User item)

@@ -44,8 +44,6 @@ namespace cinema_manager_api
         app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "cinema_manager_api v1"));
       }
 
-      app.UseHttpsRedirection();
-
       app.UseRouting();
 
       app.UseAuthorization();

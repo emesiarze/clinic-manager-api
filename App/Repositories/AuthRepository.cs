@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using cinema_manager_api.Data;
+using cinema_manager_api.Helpers;
 using cinema_manager_api.Models;
 
 namespace cinema_manager_api.Repositories
@@ -10,7 +11,13 @@ namespace cinema_manager_api.Repositories
 
     public User login(string login, string password)
     {
-      User user = users.Find(user => user.login.Equals(login) && user.password.Equals(password));
+      string encryptedPassword = CaesarCipher.Encrypt(password);
+      User user = users.Find(user =>
+      {
+        System.Diagnostics.Debug.WriteLine(user.login + " " + user.password + " " + encryptedPassword + " " + encryptedPassword.Length);
+        return user.login.Equals(login) && user.password.Equals(encryptedPassword);
+      });
+
       if (user is null)
       {
         return null;
