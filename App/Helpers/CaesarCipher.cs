@@ -30,7 +30,7 @@ namespace CinemaManagerApi.Helpers
     private static char GetCorrespondingCharacter(string character)
     {
       int indexOfChar = ALPHABET.IndexOf(character);
-      return ALPHABET[indexOfChar + CIPHER_STEP];
+      return ALPHABET[(indexOfChar + CIPHER_STEP) % ALPHABET.Length - 1];
     }
   }
 }
