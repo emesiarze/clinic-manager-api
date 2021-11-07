@@ -4,6 +4,7 @@ namespace CinemaManagerApi.Models
 {
   public class User : IDatabaseItem<User>
   {
+    public User() { }
 
     public User(string fullName, string login, string password, bool isWorker)
     {
@@ -13,6 +14,7 @@ namespace CinemaManagerApi.Models
       this.password = password;
       this.isWorker = isWorker;
     }
+
     public User(User user)
     {
       this.id = user.id;
