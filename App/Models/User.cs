@@ -7,7 +7,10 @@ namespace cinema_manager_api.Models
   {
     private string _password;
 
-    public User() { }
+    public User()
+    {
+      this.id = Guid.NewGuid();
+    }
 
     public User(string fullName, string login, string password, bool isWorker)
     {
