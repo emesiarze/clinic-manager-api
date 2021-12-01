@@ -3,8 +3,8 @@ using clinic_manager_api.Repositories;
 
 namespace clinic_manager_api.Controllers
 {
-  public class DiseasesController : GenericController<Symptom>
+  public class DiseasesController : GenericController<Disease, DiseaseDto>
   {
-    public DiseasesController(IRepository<Symptom> repository) : base(repository) { }
+    public DiseasesController(IRepository<Disease, DiseaseDto> repository) : base(repository) { }
   }
 }

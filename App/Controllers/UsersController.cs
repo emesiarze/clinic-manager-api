@@ -5,8 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace clinic_manager_api.Controllers
 {
-  public class UsersController : GenericController<User>
+  public class UsersController : GenericController<User, UserDto>
   {
-    public UsersController(IRepository<User> repository) : base(repository) { }
+    public UsersController(IRepository<User, UserDto> repository) : base(repository) { }
   }
 }

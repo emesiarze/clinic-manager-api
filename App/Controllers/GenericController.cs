@@ -8,11 +8,11 @@ namespace clinic_manager_api.Controllers
 {
   [ApiController]
   [Route("[controller]")]
-  public class GenericController<T> : ControllerBase
+  public class GenericController<T, TDto> : ControllerBase
   {
-    protected readonly IRepository<T> repository;
+    protected readonly IRepository<T, TDto> repository;
 
-    public GenericController(IRepository<T> repository)
+    public GenericController(IRepository<T, TDto> repository)
     {
       this.repository = repository;
     }
