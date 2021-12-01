@@ -7,11 +7,11 @@ namespace clinic_manager_api.Data
   {
     public static List<User> items = new List<User>() {
       new User("admin", "admin", "admin", true),
-      new User("Jan Kowalski", "jankow", "asdf", false),
+      new User("lek. Jan Kowalski", "ljankow", "asdf", true),
+      new User("lek. Jose Mandalonez", "asdf", "asdf", true),
       new User("Adam Nowak", "adanow", "asdf", false),
       new User("Jerzy Gwóźdź", "jergwo", "asdf", false),
       new User("qwer", "qwer", "qwer", false),
-      new User("asdf", "asdf", "asdf", false),
     };
   }
 }
