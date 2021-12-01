@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using cinema_manager_api.Data;
-using cinema_manager_api.Helpers;
-using cinema_manager_api.Models;
+using clinic_manager_api.Data;
+using clinic_manager_api.Helpers;
+using clinic_manager_api.Models;
 using System.Linq;
 
-namespace cinema_manager_api.Repositories
+namespace clinic_manager_api.Repositories
 {
   public class AuthRepository : ILoginRepository<User>
   {

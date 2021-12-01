@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using cinema_manager_api.Data;
-using cinema_manager_api.Models;
+using clinic_manager_api.Data;
+using clinic_manager_api.Models;
 
-namespace cinema_manager_api.Repositories
+namespace clinic_manager_api.Repositories
 {
   public class ReservationsRepository : GenericRepository<Reservation>
   {

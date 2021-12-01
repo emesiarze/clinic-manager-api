@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projekty\\cinema-manager-api\\Tests\\Tests.csproj": {}
+    "d:\\Projekty\\clinic-manager-api\\Tests\\Tests.csproj": {}
   },
   "projects": {
-    "D:\\Projekty\\cinema-manager-api\\App\\cinema-manager-api.csproj": {
+    "d:\\Projekty\\clinic-manager-api\\App\\clinic-manager-api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projekty\\cinema-manager-api\\App\\cinema-manager-api.csproj",
-        "projectName": "cinema-manager-api",
-        "projectPath": "D:\\Projekty\\cinema-manager-api\\App\\cinema-manager-api.csproj",
+        "projectUniqueName": "d:\\Projekty\\clinic-manager-api\\App\\clinic-manager-api.csproj",
+        "projectName": "clinic-manager-api",
+        "projectPath": "d:\\Projekty\\clinic-manager-api\\App\\clinic-manager-api.csproj",
         "packagesPath": "C:\\Users\\Hubert\\.nuget\\packages\\",
-        "outputPath": "D:\\Projekty\\cinema-manager-api\\App\\obj\\",
+        "outputPath": "d:\\Projekty\\clinic-manager-api\\App\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Hubert\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -67,14 +67,14 @@
         }
       }
     },
-    "D:\\Projekty\\cinema-manager-api\\Tests\\Tests.csproj": {
+    "d:\\Projekty\\clinic-manager-api\\Tests\\Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projekty\\cinema-manager-api\\Tests\\Tests.csproj",
+        "projectUniqueName": "d:\\Projekty\\clinic-manager-api\\Tests\\Tests.csproj",
         "projectName": "Tests",
-        "projectPath": "D:\\Projekty\\cinema-manager-api\\Tests\\Tests.csproj",
+        "projectPath": "d:\\Projekty\\clinic-manager-api\\Tests\\Tests.csproj",
         "packagesPath": "C:\\Users\\Hubert\\.nuget\\packages\\",
-        "outputPath": "D:\\Projekty\\cinema-manager-api\\Tests\\obj\\",
+        "outputPath": "d:\\Projekty\\clinic-manager-api\\Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Hubert\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -91,8 +91,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Projekty\\cinema-manager-api\\App\\cinema-manager-api.csproj": {
-                "projectPath": "D:\\Projekty\\cinema-manager-api\\App\\cinema-manager-api.csproj"
+              "d:\\Projekty\\clinic-manager-api\\App\\clinic-manager-api.csproj": {
+                "projectPath": "d:\\Projekty\\clinic-manager-api\\App\\clinic-manager-api.csproj"
               }
             }
           }

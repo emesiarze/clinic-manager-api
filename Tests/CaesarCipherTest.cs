@@ -1,5 +1,5 @@
 using System;
-using cinema_manager_api.Helpers;
+using clinic_manager_api.Helpers;
 using Xunit;
 
 namespace Tests

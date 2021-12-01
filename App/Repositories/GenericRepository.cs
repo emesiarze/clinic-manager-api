@@ -1,9 +1,9 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
-using cinema_manager_api.Models;
+using clinic_manager_api.Models;
 
-namespace cinema_manager_api.Repositories
+namespace clinic_manager_api.Repositories
 {
 
   public abstract class GenericRepository<T> : IRepository<T> where T : IDatabaseItem<T>

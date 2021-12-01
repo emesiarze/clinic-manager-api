@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "cinema_manager_api": {
+    "clinic_manager_api": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

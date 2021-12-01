@@ -1,4 +1,4 @@
-namespace cinema_manager_api.Models
+namespace clinic_manager_api.Models
 {
   public class Response<T>
   {

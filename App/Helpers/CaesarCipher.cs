@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 
-namespace cinema_manager_api.Helpers
+namespace clinic_manager_api.Helpers
 {
   public class CaesarCipher
   {

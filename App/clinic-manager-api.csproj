@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>cinema_manager_api</RootNamespace>
+    <RootNamespace>clinic_manager_api</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

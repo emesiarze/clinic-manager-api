@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\App\cinema-manager-api.csproj" />
+    <ProjectReference Include="..\App\clinic-manager-api.csproj" />
   </ItemGroup>
 
 </Project>

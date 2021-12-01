@@ -10,7 +10,7 @@
       "request": "launch",
       "preLaunchTask": "build",
       // If you have changed target frameworks, make sure to update the program path.
-      "program": "${workspaceFolder}/app/bin/Debug/net5.0/cinema-manager-api.dll",
+      "program": "${workspaceFolder}/app/bin/Debug/net5.0/clinic-manager-api.dll",
       "args": [],
       "cwd": "${workspaceFolder}",
       "stopAtEntry": false,

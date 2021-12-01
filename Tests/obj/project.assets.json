@@ -1743,17 +1743,17 @@
           "build/netcoreapp2.1/xunit.runner.visualstudio.props": {}
         }
       },
-      "cinema-manager-api/1.0.0": {
+      "clinic-manager-api/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Swashbuckle.AspNetCore": "5.6.3"
         },
         "compile": {
-          "bin/placeholder/cinema-manager-api.dll": {}
+          "bin/placeholder/clinic-manager-api.dll": {}
         },
         "runtime": {
-          "bin/placeholder/cinema-manager-api.dll": {}
+          "bin/placeholder/clinic-manager-api.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -6102,16 +6102,16 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
-    "cinema-manager-api/1.0.0": {
+    "clinic-manager-api/1.0.0": {
       "type": "project",
-      "path": "../App/cinema-manager-api.csproj",
-      "msbuildProject": "../App/cinema-manager-api.csproj"
+      "path": "../App/clinic-manager-api.csproj",
+      "msbuildProject": "../App/clinic-manager-api.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "Microsoft.NET.Test.Sdk >= 16.9.4",
-      "cinema-manager-api >= 1.0.0",
+      "clinic-manager-api >= 1.0.0",
       "coverlet.collector >= 3.0.2",
       "xunit >= 2.4.1",
       "xunit.runner.visualstudio >= 2.4.3"
@@ -6123,11 +6123,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projekty\\cinema-manager-api\\Tests\\Tests.csproj",
+      "projectUniqueName": "d:\\Projekty\\clinic-manager-api\\Tests\\Tests.csproj",
       "projectName": "Tests",
-      "projectPath": "D:\\Projekty\\cinema-manager-api\\Tests\\Tests.csproj",
+      "projectPath": "d:\\Projekty\\clinic-manager-api\\Tests\\Tests.csproj",
       "packagesPath": "C:\\Users\\Hubert\\.nuget\\packages\\",
-      "outputPath": "D:\\Projekty\\cinema-manager-api\\Tests\\obj\\",
+      "outputPath": "d:\\Projekty\\clinic-manager-api\\Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Hubert\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6144,8 +6144,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Projekty\\cinema-manager-api\\App\\cinema-manager-api.csproj": {
-              "projectPath": "D:\\Projekty\\cinema-manager-api\\App\\cinema-manager-api.csproj"
+            "d:\\Projekty\\clinic-manager-api\\App\\clinic-manager-api.csproj": {
+              "projectPath": "d:\\Projekty\\clinic-manager-api\\App\\clinic-manager-api.csproj"
             }
           }
         }
