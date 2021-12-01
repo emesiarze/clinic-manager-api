@@ -49,7 +49,7 @@ namespace clinic_manager_api.Models
     }
   }
 
-  public class UserDto
+  public class UserDto : IDataTransferObject
   {
     public UserDto(User user)
     {

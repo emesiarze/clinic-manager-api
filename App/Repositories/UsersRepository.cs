@@ -4,7 +4,7 @@ using clinic_manager_api.Models;
 
 namespace clinic_manager_api.Repositories
 {
-  public class UsersRepository : GenericRepository<User>
+  public class UsersRepository : GenericRepository<User, UserDto>
   {
     public override List<User> items
     {

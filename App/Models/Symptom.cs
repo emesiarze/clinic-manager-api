@@ -2,7 +2,7 @@ using System;
 
 namespace clinic_manager_api.Models
 {
-  public class Symptom : IDatabaseItem<Symptom>
+  public class Symptom : IDatabaseItem<Symptom>, IDataTransferObject
   {
     public Guid id { get; init; }
     public string name { get; set; }

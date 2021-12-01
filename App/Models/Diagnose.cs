@@ -1,13 +1,14 @@
 using System;
+using System.Collections.Generic;
 
 namespace clinic_manager_api.Models
 {
   public class Diagnose : IDatabaseItem<Diagnose>
   {
-    public Diagnose(Guid userId, Guid doctorId, Guid diseaseId, Guid[] symptomsExperiencedIds, DateTime diagnoseDate)
+    public Diagnose(Guid patientId, Guid doctorId, Guid diseaseId, List<Guid> symptomsExperiencedIds, DateTime diagnoseDate)
     {
       this.id = Guid.NewGuid();
-      this.userId = userId;
+      this.parientId = patientId;
       this.doctorId = doctorId;
       this.diseaseId = diseaseId;
       this.symptomsExperiencedIds = symptomsExperiencedIds;
@@ -15,17 +16,15 @@ namespace clinic_manager_api.Models
     }
 
     public Guid id { get; init; }
-    public Guid userId { get; set; }
+    public Guid parientId { get; set; }
     public Guid doctorId { get; set; }
     public Guid diseaseId { get; set; }
-    public Guid[] symptomsExperiencedIds { get; set; }
-    public Disease disease { get; set; }
-    public Symptom[] symptomsExperienced { get; set; }
+    public List<Guid> symptomsExperiencedIds { get; set; }
     public DateTime diagnoseDate { get; set; }
 
     public void Update(Diagnose item)
     {
-      this.userId = item.userId;
+      this.parientId = item.parientId;
       this.doctorId = item.doctorId;
       this.diseaseId = item.diseaseId;
       this.symptomsExperiencedIds = item.symptomsExperiencedIds;
@@ -33,23 +32,31 @@ namespace clinic_manager_api.Models
     }
   }
 
-  public class DiagnoseDto
+  public class DiagnoseDto : IDataTransferObject
   {
-    public DiagnoseDto(UserDto userId, UserDto doctorId, DiseaseDto disease, Symptom[] symptomsExperienced, DateTime diagnoseDate)
+    public DiagnoseDto() { }
+
+    public DiagnoseDto(Diagnose item)
+    {
+      this.id = item.id;
+      this.diagnoseDate = item.diagnoseDate;
+    }
+
+    public DiagnoseDto(UserDto patient, UserDto doctor, DiseaseDto disease, List<Symptom> symptomsExperienced, DateTime diagnoseDate)
     {
       this.id = Guid.NewGuid();
-      this.user = userId;
-      this.doctor = doctorId;
+      this.patient = patient;
+      this.doctor = doctor;
       this.disease = disease;
       this.symptomsExperienced = symptomsExperienced;
       this.diagnoseDate = diagnoseDate;
     }
 
     public Guid id { get; init; }
-    public UserDto user { get; set; }
+    public UserDto patient { get; set; }
     public UserDto doctor { get; set; }
     public DiseaseDto disease { get; set; }
-    public Symptom[] symptomsExperienced { get; set; }
+    public List<Symptom> symptomsExperienced { get; set; }
     public DateTime diagnoseDate { get; set; }
   }
 }

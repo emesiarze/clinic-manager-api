@@ -6,7 +6,9 @@ using clinic_manager_api.Models;
 namespace clinic_manager_api.Repositories
 {
 
-  public abstract class GenericRepository<T> : IRepository<T> where T : IDatabaseItem<T>
+  public abstract class GenericRepository<T, TDto> : IRepository<T, TDto>
+    where T : IDatabaseItem<T>
+    where TDto : IDataTransferObject
   {
     abstract public List<T> items { get; }
 
@@ -22,6 +24,16 @@ namespace clinic_manager_api.Repositories
                             select qItem;
 
       return singleItemQuery.FirstOrDefault<T>();
+    }
+
+    public virtual TDto GetSingleItemDto(Guid id)
+    {
+      return default;
+    }
+
+    public virtual IEnumerable<TDto> GetAllItemsDto()
+    {
+      return default;
     }
 
     public virtual string AddItem(T item)

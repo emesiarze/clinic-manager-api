@@ -4,13 +4,13 @@ using clinic_manager_api.Models;
 
 namespace clinic_manager_api.Repositories
 {
-  public class HallsRepository : GenericRepository<Symptom>
+  class DiseasesRepository : GenericRepository<Disease, DiseaseDto>
   {
-    public override List<Symptom> items
+    public override List<Disease> items
     {
       get
       {
-        return HallsData.items;
+        return DiseasesData.items;
       }
     }
   }

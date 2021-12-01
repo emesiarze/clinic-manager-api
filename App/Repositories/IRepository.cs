@@ -4,12 +4,14 @@ using System.Collections.Generic;
 
 namespace clinic_manager_api.Repositories
 {
-  public interface IRepository<IIdentifiable>
+  public interface IRepository<T, TDto>
   {
-    string AddItem(IIdentifiable item);
+    string AddItem(T item);
     string DeleteItem(Guid id);
-    IEnumerable<IIdentifiable> GetAllItems();
-    IIdentifiable GetSingleItem(Guid id);
-    string UpdateItem(IIdentifiable item);
+    IEnumerable<T> GetAllItems();
+    T GetSingleItem(Guid id);
+    IEnumerable<TDto> GetAllItemsDto();
+    TDto GetSingleItemDto(Guid id);
+    string UpdateItem(T item);
   }
 }

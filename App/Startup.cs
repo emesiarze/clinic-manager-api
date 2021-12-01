@@ -21,11 +21,10 @@ namespace clinic_manager_api
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
-      services.AddSingleton<IRepository<User>, UsersRepository>();
-      services.AddSingleton<IRepository<Symptom>, MoviesRepository>();
-      services.AddSingleton<IRepository<Symptom>, HallsRepository>();
-      services.AddSingleton<IRepository<Reservation>, ReservationsRepository>();
-      services.AddSingleton<IRepository<Diagnose>, SeansesRepository>();
+      services.AddSingleton<IRepository<User, UserDto>, UsersRepository>();
+      services.AddSingleton<IRepository<Disease, DiseaseDto>, DiseasesRepository>();
+      services.AddSingleton<IRepository<Symptom, Symptom>, SymptomsRepository>();
+      services.AddSingleton<IRepository<Diagnose, DiagnoseDto>, DiagnosesRepository>();
       services.AddSingleton<ILoginRepository<User>, AuthRepository>();
       services.AddControllers();
       services.AddSwaggerGen(c =>
