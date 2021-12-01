@@ -52,7 +52,7 @@ namespace clinic_manager_api.Repositories
       this.items.ForEach(item =>
       {
         User user = UsersData.items.Find(h => h.id.Equals(item.userId));
-        Seanse seanse = SeansesData.items.Find(m => m.id.Equals(item.seanseId));
+        Diagnose seanse = SeansesData.items.Find(m => m.id.Equals(item.seanseId));
       });
 
       return items;
@@ -63,7 +63,7 @@ namespace clinic_manager_api.Repositories
       Reservation item = base.GetSingleItem(id);
 
       User user = UsersData.items.Find(h => h.id.Equals(item.userId));
-      Seanse seanse = SeansesData.items.Find(m => m.id.Equals(item.seanseId));
+      Diagnose seanse = SeansesData.items.Find(m => m.id.Equals(item.seanseId));
 
       return item;
     }

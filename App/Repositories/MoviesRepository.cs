@@ -4,9 +4,9 @@ using clinic_manager_api.Models;
 
 namespace clinic_manager_api.Repositories
 {
-  class MoviesRepository : GenericRepository<Movie>
+  class MoviesRepository : GenericRepository<Symptom>
   {
-    public override List<Movie> items
+    public override List<Symptom> items
     {
       get
       {

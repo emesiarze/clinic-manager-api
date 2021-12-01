@@ -4,9 +4,9 @@ using clinic_manager_api.Models;
 
 namespace clinic_manager_api.Repositories
 {
-  public class HallsRepository : GenericRepository<Hall>
+  public class HallsRepository : GenericRepository<Symptom>
   {
-    public override List<Hall> items
+    public override List<Symptom> items
     {
       get
       {

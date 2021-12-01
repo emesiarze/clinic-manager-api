@@ -28,30 +28,30 @@ namespace clinic_manager_api
     private static void InitializeSeanses()
     {
       System.Diagnostics.Debug.WriteLine("Populating seanses");
-      List<Hall> halls = HallsData.items;
-      List<Movie> movies = MoviesData.items;
+      List<Symptom> halls = HallsData.items;
+      List<Symptom> movies = MoviesData.items;
 
       Random rand = new Random();
       // DateTime date = new DateTime();
 
-      int minIndex = Math.Min(halls.Count<Hall>(), movies.Count<Movie>());
+      int minIndex = Math.Min(halls.Count<Symptom>(), movies.Count<Symptom>());
       for (int i = 0; i < minIndex; i++)
       {
         DateTime date = DateTime.Now;
         date.AddDays(rand.Next(0, 5));
         date.AddHours(rand.Next(0, 5));
         date.AddMinutes(rand.Next(0, 59));
-        SeansesData.items.Add(new Seanse(movies[i].id, halls[i].id, date));
+        SeansesData.items.Add(new Diagnose(movies[i].id, halls[i].id, date));
       }
     }
 
     private static void InitializeReservations()
     {
       System.Diagnostics.Debug.WriteLine("Creating reservations");
-      List<Seanse> seanses = SeansesData.items;
+      List<Diagnose> seanses = SeansesData.items;
       List<User> users = UsersData.items;
 
-      int minIndex = Math.Min(seanses.Count<Seanse>(), users.Count<User>());
+      int minIndex = Math.Min(seanses.Count<Diagnose>(), users.Count<User>());
       for (int i = 0; i < minIndex; i++)
       {
         ReservationsData.items.Add(new Reservation(users[i].id, seanses[i].id, i, DateTime.Now, false));

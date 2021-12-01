@@ -5,11 +5,11 @@ namespace clinic_manager_api.Data
 {
   public static class MoviesData
   {
-    public static List<Movie> items = new List<Movie>() {
-      new Movie("Jan Makłowicz", "Ratatuj", 123),
-      new Movie("Stefan Gragóra", "Łocz dis", 160),
-      new Movie("Adam Handler", "Togres", 95),
-      new Movie("Swift Kieliver", "S.J.O.T.", 102),
+    public static List<Symptom> items = new List<Symptom>() {
+      new Symptom("Jan Makłowicz", "Ratatuj", 123),
+      new Symptom("Stefan Gragóra", "Łocz dis", 160),
+      new Symptom("Adam Handler", "Togres", 95),
+      new Symptom("Swift Kieliver", "S.J.O.T.", 102),
     };
   }
 }

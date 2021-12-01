@@ -5,11 +5,11 @@ namespace clinic_manager_api.Data
 {
   public static class HallsData
   {
-    public static List<Hall> items = new List<Hall>() {
-      new Hall("1"),
-      new Hall("2"),
-      new Hall("3"),
-      new Hall("4"),
+    public static List<Symptom> items = new List<Symptom>() {
+      new Symptom("1"),
+      new Symptom("2"),
+      new Symptom("3"),
+      new Symptom("4"),
     };
   }
 }

@@ -6,6 +6,6 @@ namespace clinic_manager_api.Data
 {
   public static class SeansesData
   {
-    public static List<Seanse> items = new List<Seanse>();
+    public static List<Diagnose> items = new List<Diagnose>();
   }
 }

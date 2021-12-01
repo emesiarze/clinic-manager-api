@@ -5,9 +5,9 @@ using clinic_manager_api.Models;
 
 namespace clinic_manager_api.Repositories
 {
-  public class SeansesRepository : GenericRepository<Seanse>
+  public class SeansesRepository : GenericRepository<Diagnose>
   {
-    public override List<Seanse> items
+    public override List<Diagnose> items
     {
       get
       {
@@ -15,25 +15,25 @@ namespace clinic_manager_api.Repositories
       }
     }
 
-    override public IEnumerable<Seanse> GetAllItems()
+    override public IEnumerable<Diagnose> GetAllItems()
     {
-      this.items.ForEach(item =>
+      this.items.ForEach((Action<Diagnose>)(item =>
       {
-        Hall hall = HallsData.items.Find(h => h.id.Equals(item.hallId));
-        Movie movie = MoviesData.items.Find(m => m.id.Equals(item.movieId));
+        Symptom hall = HallsData.items.Find((Predicate<Symptom>)(h => (bool)h.id.Equals(item.symptomId)));
+        Symptom movie = MoviesData.items.Find((Predicate<Symptom>)(m => (bool)m.id.Equals(item.diseaseId)));
 
         item.hall = hall;
         item.movie = movie;
-      });
+      }));
 
       return items;
     }
 
-    override public Seanse GetSingleItem(Guid id)
+    override public Diagnose GetSingleItem(Guid id)
     {
-      Seanse item = base.GetSingleItem(id);
-      Hall hall = HallsData.items.Find(h => h.id.Equals(item.hallId));
-      Movie movie = MoviesData.items.Find(m => m.id.Equals(item.movieId));
+      Diagnose item = base.GetSingleItem(id);
+      Symptom hall = HallsData.items.Find(h => h.id.Equals(item.symptomId));
+      Symptom movie = MoviesData.items.Find(m => m.id.Equals(item.diseaseId));
 
       item.hall = hall;
       item.movie = movie;
