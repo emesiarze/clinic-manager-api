@@ -18,19 +18,19 @@ namespace clinic_manager_api.Controllers
     }
 
     [HttpGet("all")]
-    public Response<IEnumerable<T>> GetAllItems()
+    public Response<IEnumerable<TDto>> GetAllItems()
     {
-      IEnumerable<T> items = repository.GetAllItems();
-      Response<IEnumerable<T>> response = this.createResponse<IEnumerable<T>>(items);
+      IEnumerable<TDto> items = repository.GetAllItemsDto();
+      Response<IEnumerable<TDto>> response = this.createResponse<IEnumerable<TDto>>(items);
 
       return response;
     }
 
     [HttpGet]
-    public Response<T> GetItem(Guid id)
+    public Response<TDto> GetItem(Guid id)
     {
-      T item = repository.GetSingleItem(id);
-      Response<T> response = this.createResponse<T>(item);
+      TDto item = repository.GetSingleItemDto(id);
+      Response<TDto> response = this.createResponse<TDto>(item);
 
       return response;
     }

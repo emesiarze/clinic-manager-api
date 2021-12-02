@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace clinic_manager_api.Models
 {
@@ -20,6 +21,11 @@ namespace clinic_manager_api.Models
     {
       this.name = item.name;
       this.symptomsIds = item.symptomsIds;
+    }
+
+    public override string ToString()
+    {
+      return name + ": " + symptomsIds.Count + "\nSymptoms: " + symptomsIds.Aggregate("", (prev, curr) => prev + " " + curr);
     }
   }
 
