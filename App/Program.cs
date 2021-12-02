@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using clinic_manager_api.Data;
+using clinic_manager_api.Helpers;
 using clinic_manager_api.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -21,48 +22,9 @@ namespace clinic_manager_api
 
     public static void InitializeDatasets()
     {
-      // TODO: Read from json file
-
-      // TODO: Create list of symptoms
-      // TODO: Create list of diseases
-
-      // InitializeSeanses();
-      // InitializeReservations();
+      DatasetPopulator populator = new DatasetPopulator("./App/Assets/complete_data.json");
+      populator.PopulateDatabase();
     }
-
-    // private static void InitializeSeanses()
-    // {
-    //   System.Diagnostics.Debug.WriteLine("Populating seanses");
-    //   List<Symptom> halls = HallsData.items;
-    //   List<Symptom> movies = MoviesData.items;
-
-    //   Random rand = new Random();
-    //   // DateTime date = new DateTime();
-
-    //   int minIndex = Math.Min(halls.Count<Symptom>(), movies.Count<Symptom>());
-    //   for (int i = 0; i < minIndex; i++)
-    //   {
-    //     DateTime date = DateTime.Now;
-    //     date.AddDays(rand.Next(0, 5));
-    //     date.AddHours(rand.Next(0, 5));
-    //     date.AddMinutes(rand.Next(0, 59));
-    //     SeansesData.items.Add(new Diagnose(movies[i].id, halls[i].id, date));
-    //   }
-    // }
-
-    // private static void InitializeReservations()
-    // {
-    //   System.Diagnostics.Debug.WriteLine("Creating reservations");
-    //   List<Diagnose> seanses = SeansesData.items;
-    //   List<User> users = UsersData.items;
-
-    //   int minIndex = Math.Min(seanses.Count<Diagnose>(), users.Count<User>());
-    //   for (int i = 0; i < minIndex; i++)
-    //   {
-    //     ReservationsData.items.Add(new Reservation(users[i].id, seanses[i].id, i, DateTime.Now, false));
-    //     ReservationsData.items.Add(new Reservation(users[i].id, seanses[i].id, i + 1, DateTime.Now, false));
-    //   }
-    // }
 
     public static IHostBuilder CreateHostBuilder(string[] args) =>
         Host.CreateDefaultBuilder(args)
