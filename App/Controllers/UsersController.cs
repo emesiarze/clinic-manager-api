@@ -15,7 +15,7 @@ namespace clinic_manager_api.Controllers
     [HttpGet("patients")]
     public Response<IEnumerable<UserDto>> GetAllPatients()
     {
-      IEnumerable<UserDto> items = repository.GetAllItemsDto().ToList().FindAll((Predicate<UserDto>)(user => !user.isDoctor));
+      IEnumerable<UserDto> items = repository.GetAllItemsDto().ToList().FindAll((Predicate<UserDto>)(user => !user.isDoctor && !user.isAdmin));
       Response<IEnumerable<UserDto>> response = this.createResponse<IEnumerable<UserDto>>(items);
 
       return response;

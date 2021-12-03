@@ -19,7 +19,7 @@ namespace clinic_manager_api.Repositories
     public override IEnumerable<UserDto> GetAllItemsDto()
     {
       IEnumerable<User> users = base.GetAllItems();
-      IEnumerable<UserDto> usersDto = users.Select(user => new UserDto(user)).ToList();
+      IEnumerable<UserDto> usersDto = users.Select(user => new UserDto(user)).ToList().FindAll((Predicate<UserDto>)(user => !user.isAdmin));
 
       return usersDto;
     }
