@@ -71,7 +71,7 @@ namespace clinic_manager_api.Controllers
       return response;
     }
 
-    private Response<R> createResponse<R>(R item)
+    protected Response<R> createResponse<R>(R item)
     {
       Response<R> response = new Response<R>();
       response.data = item;
