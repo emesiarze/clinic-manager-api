@@ -17,6 +17,22 @@ namespace clinic_manager_api.Helpers
       this.fileName = fileName;
     }
 
+    public void CreateSampeDiagnoses()
+    {
+      Disease disease = DiseasesData.items.First();
+      User patient = UsersData.items.FindAll(user => !user.isDoctor && !user.isAdmin).First();
+      User doctor = UsersData.items.FindAll(user => user.isDoctor).First();
+
+      DiagnosesData.items.Add(new Diagnose(patient.id, doctor.id, disease.id, disease.symptomsIds, DateTime.Now));
+
+      disease = DiseasesData.items.Last();
+      doctor = UsersData.items.FindAll(user => user.isDoctor).Last();
+
+      DiagnosesData.items.Add(new Diagnose(patient.id, doctor.id, disease.id, disease.symptomsIds, DateTime.Now));
+
+      System.Diagnostics.Debug.WriteLine("Diagnose id: " + DiagnosesData.items.First().id);
+    }
+
     public void PopulateDatabase()
     {
       System.Diagnostics.Debug.WriteLine("Reading from " + fileName);

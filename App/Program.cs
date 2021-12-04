@@ -24,6 +24,7 @@ namespace clinic_manager_api
     {
       DatasetPopulator populator = new DatasetPopulator("./App/Assets/complete_data.json");
       populator.PopulateDatabase();
+      populator.CreateSampeDiagnoses();
     }
 
     public static IHostBuilder CreateHostBuilder(string[] args) =>
