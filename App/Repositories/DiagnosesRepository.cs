@@ -86,7 +86,7 @@ namespace clinic_manager_api.Repositories
         return result;
       });
 
-      return allItemsDto;
+      return allItemsDto.OrderByDescending(x => x.diagnoseDate);
     }
   }
 }

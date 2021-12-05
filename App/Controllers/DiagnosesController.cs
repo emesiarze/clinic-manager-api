@@ -23,7 +23,7 @@ namespace clinic_manager_api.Controllers
     }
 
     [HttpPost("diagnose")]
-    public DiagnoseDto Diagnose(DiagnoseDto unhandledDiagnose)
+    public Response<DiagnoseDto> Diagnose(DiagnoseDto unhandledDiagnose)
     {
       List<Symptom> symptoms = unhandledDiagnose.symptomsExperienced;
       IEnumerable<Guid> symptomsIds = symptoms.Select((symptom => symptom.id));
@@ -41,7 +41,9 @@ namespace clinic_manager_api.Controllers
       Diagnose diagnose = new Diagnose(unhandledDiagnose.patient.id, unhandledDiagnose.doctor.id, mostProbableDiseaseId, symptomsIds.ToList(), DateTime.Now);
       DiagnosesData.items.Add(diagnose);
 
-      return this.repository.GetSingleItemDto(diagnose.id);
+      DiagnoseDto diagnoseDto = this.repository.GetSingleItemDto(diagnose.id);
+
+      return this.createResponse<DiagnoseDto>(diagnoseDto);
     }
   }
 }
