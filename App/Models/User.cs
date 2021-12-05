@@ -55,12 +55,22 @@ namespace clinic_manager_api.Models
 
   public class UserDto : IDataTransferObject
   {
+    public UserDto() { }
+
+    public UserDto(Guid id, string fullName, string login, bool isDoctor, bool isAdmin)
+    {
+      this.id = id;
+      this.fullName = fullName;
+      this.login = login;
+      this.isDoctor = isDoctor;
+      this.isAdmin = isAdmin;
+    }
     public UserDto(User user)
     {
       this.id = user.id;
       this.fullName = user.fullName;
       this.login = user.login;
-      this.password = null;
+      this.password = "";
       this.isDoctor = user.isDoctor;
       this.isAdmin = user.isAdmin;
     }
