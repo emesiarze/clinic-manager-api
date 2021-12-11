@@ -12,11 +12,8 @@ namespace clinic_manager_api.Repositories
 
     public User login(string login, string password)
     {
-
-      string encryptedPassword = CaesarCipher.Encrypt(password);
-
       var query = from qUser in users
-                  where qUser.login == login && qUser.password == encryptedPassword
+                  where qUser.login == login && qUser.password == password
                   select qUser;
 
       if (query.Any<User>())

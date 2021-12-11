@@ -11,7 +11,7 @@ namespace Tests
     {
       string phrase = "abcd";
       string expectedResult = "hijk";
-      string actualResult = CaesarCipher.Encrypt(phrase);
+      string actualResult = RsaCryptographyService.Encrypt(phrase);
 
       Assert.True(actualResult == expectedResult);
     }
@@ -30,7 +30,7 @@ namespace Tests
 
     public void TestCaesarCipherExceptionMessage(string testPhrase, string expectedExceptionMessage)
     {
-      Action encryption = () => CaesarCipher.Encrypt(testPhrase);
+      Action encryption = () => RsaCryptographyService.Encrypt(testPhrase);
       Exception exception = Assert.Throws<Exception>(encryption);
       Assert.Equal(expectedExceptionMessage, exception.Message);
 

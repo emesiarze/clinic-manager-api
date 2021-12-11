@@ -36,10 +36,10 @@ namespace clinic_manager_api.Models
     public string login { get; set; }
     public string password
     {
-      get => _password;
+      get => RsaCryptographyService.Decrypt(_password);
       set
       {
-        _password = CaesarCipher.Encrypt(value);
+        _password = RsaCryptographyService.Encrypt(value);
       }
     }
     public bool isDoctor { get; set; }

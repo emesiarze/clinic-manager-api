@@ -22,7 +22,7 @@ namespace clinic_manager_api
 
     public static void InitializeDatasets()
     {
-      DatasetPopulator populator = new DatasetPopulator("./App/Assets/complete_data.json");
+      DatasetPopulator populator = new DatasetPopulator("./Assets/complete_data.json");
       populator.PopulateDatabase();
       populator.CreateSampeDiagnoses();
     }
