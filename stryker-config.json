@@ -1,0 +1,5 @@
+{
+  "stryker-config": {
+    "project-file": "./App/clinic-manager-api.csproj"
+  }
+}
