@@ -10,15 +10,19 @@ namespace clinic_manager_api.Helpers
 
     static public string Encrypt(string value)
     {
-      try
+      if (value != "")
       {
-        return RSAEncrypt(value, rsa.ExportParameters(false), false);
+        try
+        {
+          return RSAEncrypt(value, rsa.ExportParameters(false), false);
+        }
+        catch (ArgumentNullException)
+        {
+          Console.WriteLine("Encryption failed.");
+          return null;
+        }
       }
-      catch (ArgumentNullException)
-      {
-        Console.WriteLine("Encryption failed.");
-        return null;
-      }
+      else throw new Exception(message: "empty_phrase");
     }
 
     static public string Decrypt(string encryptedData)

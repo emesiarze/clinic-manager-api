@@ -4,22 +4,15 @@ using Xunit;
 
 namespace Tests
 {
-  public class CaeasarCipherTest
+  public class RSAEncryptionTest
   {
     [Fact]
-    public void TestCaeasarCipher_ReturnsCorrectlyEncryptedPhrase()
+    public void TestRsaEncryption_ReturnsCorrectlyEncryptedPhrase()
     {
       string phrase = "abcd";
-      string expectedResult = "hijk";
-      string actualResult = RsaCryptographyService.Encrypt(phrase);
+      string actualResult = RsaCryptographyService.Decrypt(RsaCryptographyService.Encrypt(phrase));
 
-      Assert.True(actualResult == expectedResult);
-    }
-
-    [Fact]
-    public void TestCaeasarCipher_ThrowsIncorrectCharactersException()
-    {
-      TestCaesarCipherExceptionMessage("ąbćd", "invalid_characters");
+      Assert.True(actualResult == phrase);
     }
 
     [Fact]
